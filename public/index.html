@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaskFlow | Demo</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header><div class="brand">TASK<span>FLOW</span></div><span class="tag">SECURITY DEMO</span></header>
+    <section class="intro">
+      <p class="eyebrow">GESTIÓN DE EQUIPOS</p>
+      <h1>Organizá tu trabajo.</h1>
+      <p>Una aplicación de tareas para explorar cómo se protege una aplicación web.</p>
+    </section>
+    <section class="panel">
+      <div class="panel-title"><div><p class="eyebrow">ACCESO DE DEMOSTRACIÓN</p><h2>Iniciar sesión</h2></div><span class="dot"></span></div>
+      <label>Correo electrónico<input id="email" value="bruno@taskflow.test"></label>
+      <label>Contraseña<input id="password" type="password" value="user123"></label>
+      <button id="login">Ingresar</button>
+      <p class="hint">También podés probar admin@taskflow.test / admin123</p>
+      <p id="message" role="status"></p>
+    </section>
+    <section class="panel hidden" id="workspace">
+      <div class="panel-title"><div><p class="eyebrow">TU ESPACIO</p><h2 id="welcome">Mis tareas</h2></div><button class="secondary" id="logout">Salir</button></div>
+      <div class="add-row"><input id="newTask" placeholder="¿Qué necesitás hacer?"><button id="add">Agregar</button></div>
+      <ul id="tasks"></ul>
+      <button class="secondary" id="loadUsers">Ver usuarios (demo)</button>
+      <pre id="users" class="hidden"></pre>
+    </section>
+    <footer>TaskFlow · Proyecto educativo · No usar en producción</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
