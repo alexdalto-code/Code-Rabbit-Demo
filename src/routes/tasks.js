@@ -8,9 +8,9 @@ router.get("/", requireAuth, (req, res) => {
   res.json(tasks.filter((task) => task.userId === req.user.id));
 });
 
-// INTENTIONAL DEMO WEAKNESS: checks login but not task ownership (IDOR).
 router.get("/:id", requireAuth, (req, res) => {
-  const task = tasks.find((item) => item.id === Number(req.params.id));
+  const taskId = Number(req.params.id);
+  const task = tasks.find((item) => item.id === taskId && item.userId === req.user.id);
   if (!task) return res.status(404).json({ error: "Task not found" });
   res.json(task);
 });
