@@ -22,8 +22,14 @@ Requiere Node.js 18 o superior.
 
 ```bash
 npm install
-npm start
+JWT_SECRET="$(node -p 'require("node:crypto").randomBytes(32).toString("hex")')" npm start
 ```
+
+El servidor requiere `JWT_SECRET`: 32 bytes aleatorios codificados como 64 caracteres hexadecimales.
+El comando de ejemplo genera una clave nueva en cada arranque. Para conservar las sesiones
+entre reinicios, reutiliza la misma clave mediante una variable de entorno protegida;
+no la guardes en el repositorio. Al cambiar la clave (incluida la actualización desde
+la clave anterior de la demo), hay que volver a iniciar sesión.
 
 Abrir http://localhost:3000
 
@@ -45,7 +51,6 @@ Se dejaron debilidades intencionales para que herramientas de revisión puedan i
 - Renderizado inseguro de contenido en el navegador.
 - Falta de comprobación de propiedad de tareas.
 - Falta de autorización por rol en la ruta administrativa.
-- Secreto de firma JWT hardcodeado.
 - Contraseñas de demostración en texto plano y ausencia de limitación de intentos.
 
 No intentes explotar estos problemas contra sistemas ajenos. Todo el código está diseñado para pruebas locales y análisis defensivo.
