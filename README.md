@@ -39,13 +39,19 @@ Abrir http://localhost:3000
 - Endpoint administrativo de usuarios.
 - API REST sencilla.
 
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:3bf754693f253936deff4033752fa67249ec36e14f42103c3353dc499aa9c9f0 -->
+
 ## Alcance de seguridad de la demo
 
 Se dejaron debilidades intencionales para que herramientas de revisión puedan investigarlas:
 - Renderizado inseguro de contenido en el navegador.
-- Falta de comprobación de propiedad de tareas.
 - Falta de autorización por rol en la ruta administrativa.
 - Secreto de firma JWT hardcodeado.
 - Contraseñas de demostración en texto plano y ausencia de limitación de intentos.
 
 No intentes explotar estos problemas contra sistemas ajenos. Todo el código está diseñado para pruebas locales y análisis defensivo.
+
+
+<!-- /coderabbit-ai-generated:v1 -->
